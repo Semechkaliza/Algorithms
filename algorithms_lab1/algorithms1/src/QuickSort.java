@@ -37,7 +37,7 @@ public class QuickSort {
             }
         }
         if (start < j)
-            if((j-start)<10){
+            if((j-start)<12){
                 insertSort(arr, start, j);
             }else{
                 sort(arr, start, j);
@@ -45,7 +45,7 @@ public class QuickSort {
 
 
         if (end > i)
-            if((end-i)<10){
+            if((end-i)<12){
                 insertSort(arr, i, end);
             }else{
                 sort(arr, i, end);

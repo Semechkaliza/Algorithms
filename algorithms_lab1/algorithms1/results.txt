@@ -1,0 +1,10 @@
+n=0 time=4834
+n=6 time=4691
+n=8 time=4693
+n=10 time=4653
+n=12 time=4649
+n=13 time=4654
+n=20 time=4747
+n=50 time=4852
+
+Answer n=12
