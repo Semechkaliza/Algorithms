@@ -45,14 +45,14 @@ public class PreparingArrays {
         }
         return null;
     }
-    public static List<Integer> getInts(String name){
-        List<Integer> ints=new ArrayList<>();
+    public static int[] getInts(String name){
+        int[] ints=new int[100000];
         try {
             String a=read(name);
             a=a.substring(1,a.length()-3)+",";
             String[] aa=a.split(" ");
             for(int i=0;i<aa.length;i++){
-                ints.add(Integer.parseInt(aa[i].substring(0,aa[i].length()-1)));
+                ints[i]=(Integer.parseInt(aa[i].substring(0,aa[i].length()-1)));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
