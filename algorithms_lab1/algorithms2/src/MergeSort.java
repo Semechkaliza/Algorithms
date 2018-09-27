@@ -1,66 +1,39 @@
-public class MergeSort {
-    void merge(Object1 arr[], int l, int m, int r) {
-        // Find sizes of two subarrays to be merged
-        int n1 = m - l + 1;
-        int n2 = r - m;
-
-        /* Create temp arrays */
-        Object1 L[] = new Object1[n1];
-        Object1 R[] = new Object1[n2];
-
-        /*Copy data to temp arrays*/
-        for (int i = 0; i < n1; ++i)
-            L[i] = arr[l + i];
-        for (int j = 0; j < n2; ++j)
-            R[j] = arr[m + 1 + j];
-
-
-        /* Merge the temp arrays */
-
-        // Initial indexes of first and second subarrays
-        int i = 0, j = 0;
-
-        // Initial index of merged subarry array
-        int k = l;
-        while (i < n1 && j < n2) {
-            if (L[i].a <= R[j].a) {
-                arr[k] = L[i];
-                i++;
+class MergeSort {
+    private void merge(Object1 arr[], int a, int b, int e) {
+        int m = b - a + 1;
+        int n = e - b;
+        Object1 m1[] = new Object1[m];
+        Object1 m2[] = new Object1[n];
+        System.arraycopy(arr, a, m1, 0, m);
+        for (int j = 0; j < n; ++j)
+            m2[j] = arr[b + 1 + j];
+        int c = 0, d = 0;
+        int s = a;
+        while (c < m && d < n) {
+            if (m1[c].a <= m2[d].a) {
+                arr[s] = m1[c];
+                c++;
             } else {
-                arr[k] = R[j];
-                j++;
+                arr[s] = m2[d];
+                d++;
             }
-            k++;
+            s++;
         }
-
-        /* Copy remaining elements of L[] if any */
-        while (i < n1) {
-            arr[k] = L[i];
-            i++;
-            k++;
+        while (c < m) {
+            arr[s] = m1[c];
+            s++;c++;
         }
-
-        /* Copy remaining elements of R[] if any */
-        while (j < n2) {
-            arr[k] = R[j];
-            j++;
-            k++;
+        while (d < n) {
+            arr[s] = m2[d];
+            d++;s++;
         }
     }
-
-    // Main function that sorts arr[l..r] using
-    // merge()
-    void sort(Object1 arr[], int l, int r) {
-        if (l < r) {
-            // Find the middle point
-            int m = (l + r) / 2;
-
-            // Sort first and second halves
-            sort(arr, l, m);
-            sort(arr, m + 1, r);
-
-            // Merge the sorted halves
-            merge(arr, l, m, r);
+    void sort(Object1 arr[], int s, int e) {
+        if (s < e) {
+            int m = (s + e) / 2;
+            sort(arr, s, m);
+            sort(arr, m + 1, e);
+            merge(arr, s, m, e);
         }
     }
 }

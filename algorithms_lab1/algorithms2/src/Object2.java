@@ -1,20 +1,9 @@
-public class Object2 {
-    public String getB() {
-        return b;
-    }
-
-    public void setB(String b) {
-        this.b = b;
-    }
-
-    public int getC() {
-        return c;
-    }
-
-    public void setC(int c) {
-        this.c = c;
-    }
-
+class Object2 {
     String b;
     int c;
+
+    Object2(String b,int c){
+        this.b=b;
+        this.c=c;
+    }
 }
