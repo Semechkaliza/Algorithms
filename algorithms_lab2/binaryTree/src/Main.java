@@ -10,5 +10,6 @@ public class Main {
         t.insert(2);
         t.printRight();
         t.printLeft();
+        System.out.println(t.search(2));
     }
 }

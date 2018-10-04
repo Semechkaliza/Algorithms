@@ -70,4 +70,27 @@ public class Tree {
             p = p.sChild;
         }
     }
+
+    public Node search(int k){
+        Node r=root;
+        while (true){
+            if(r.key==k){
+                return r;
+            }else{
+                if(r.key>k){
+                    if(r.sChild!=null){
+                        r=r.sChild;
+                    }else{
+                        return null;
+                    }
+                }else{
+                    if(r.bChild!=null){
+                        r=r.bChild;
+                    }else{
+                        return null;
+                    }
+                }
+            }
+        }
+    }
 }
