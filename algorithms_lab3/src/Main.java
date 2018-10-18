@@ -7,9 +7,12 @@ public class Main {
 
         }
         System.out.println(table.toString());
-//        table.put("one",1);
-//        table.put("two",2);
-//        table.put("one",1);
 
+        SquareHashMap<Integer,Integer> table1=new SquareHashMap<>();
+        for(int i=0;i<1000;i++){
+            int a=(int)(Math.random()*1000);
+            table1.put(a,a);
+        }
+        System.out.println(table1.toString());
     }
 }
